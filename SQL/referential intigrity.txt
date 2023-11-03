@@ -1,0 +1,75 @@
+sql 
+
+ ------ Referential intigrity
+
+ - parent table then child table
+ - you can not drop the parent table
+ - inserting values have specific order ( first insert in parent table and insert in the child table)
+ - deletition have a specific order ( first delete in child table and then delete in parents table)
+ - Update should first to be done in parents table then update in child table
+
+Casecade and NotNull
+
+ -------
+
+ - On delete cascade              - On delete set not null
+ - On update cascade              - On update set Not null
+
+ *On delete cascade
+
+     When you delete any value from parent table which is present in both parent table and child table ,that record 
+in child table also going to be deleted.
+
+
+ *On Update cascade
+
+     When you Update any value from parent table which is present in both parent table and child table ,that record 
+in child table also going to be Updated.
+
+
+ *On delete Set null cascade
+
+     When you delete any value from parent table which is present in both parent table and child table in child 
+table it will enetred as null value.
+
+
+ *On update Set null cascade
+
+     When you update any value from parent table which is present in both parent table and child table in child 
+table it will updates as null value.
+
+
+
+
+  ---------------------------------JOINS
+
+  * Inner Join
+  
+    It shows the value that are present in both of the table
+
+      select * from batch_221 join courses on batch_221. ID = Course. stud_id;
+
+
+  * Left Join 
+     
+     all the comman values prsesnt in PTand CT and also values that are present in the left hand side of the table
+
+    {left hand side is nothing but the table we write first}
+
+       
+      select * from batch_221 as b left join courses as c on b.ID = C.stud_id;
+
+  * Right Join 
+     
+     all the values prsesnt in PTand CT and also values that are present in the right hand side of the table
+
+    {right hand side is nothing but the table we write second}
+
+      select * from batch_221 as b Right join courses as c on b.ID = C.stud_id;
+
+
+
+  * Cross join
+
+
+     select * from batch_221 cross join courses;
